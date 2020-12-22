@@ -1,4 +1,3 @@
-use Bitwise
 defmodule Day2 do
   def part(l,part_number) do
     [limits,letter,password] = String.split(l," ")
@@ -10,14 +9,11 @@ defmodule Day2 do
       n_times = password
                 |> String.graphemes()
                 |>Enum.count(fn ltr -> ltr == letter end)
-
       n_times >= min && n_times <= max
     else
       (String.at(password,min-1) == letter) !=
       (String.at(password,max-1) == letter)
     end
-
-
   end
 end
 fun = fn part ->
